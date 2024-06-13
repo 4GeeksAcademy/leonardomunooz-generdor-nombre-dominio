@@ -12,20 +12,23 @@ function domainGeneratorList(pronoun1, adj1, noun1) {
   for (let index = 0; index < pronoun1.length; index++) {
     for (let adjItem = 0; adjItem < adj1.length; adjItem++) {
       for (let nounItem = 0; nounItem < noun1.length; nounItem++) {
-        //    console.log(`${pronoun[index]}${adj[adjItem]}${noun[nounItem]}.com`);;
-        let domianItemGenerated =
-          pronoun1[index] + adj1[adjItem] + noun1[nounItem];
-        domainGeneratorArray.push(domianItemGenerated);
+        //    console.log(`${pronoun[index]}${adj[adjItem]}${noun[nounItem]}.com`);
+        for(let ext of extentions){
+           let domianItemGenerated =
+          pronoun1[index] + adj1[adjItem] + noun1[nounItem]  + ext;
+          domainGeneratorArray.push(domianItemGenerated);
+        }
       }
     }
   }
   return domainGeneratorArray;
 }
 
+
 function showArrayList(arrayList) {
-  arrayList.forEach((Element) => {
-    console.log(Element + ".com");
+  arrayList.forEach((element) => {
+    console.log(element);
   });
 }
-
-showArrayList(domainGeneratorList(pronoun, adj, noun));
+let domainGeneratedList = domainGeneratorList(pronoun, adj, noun);
+showArrayList(domainGeneratedList);git sta
